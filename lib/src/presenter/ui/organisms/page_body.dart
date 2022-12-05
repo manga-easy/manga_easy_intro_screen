@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../components/constant.dart';
+import '../components/constant.dart';
 
 class PageBody extends StatelessWidget {
   final String titlePage;
