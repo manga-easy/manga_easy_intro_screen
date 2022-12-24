@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:intro_screen/src/domain/assets_enum.dart';
 import 'package:introduction_slider/introduction_slider.dart';
-import 'package:intro_screen/src/introduce_module.dart';
 import 'package:intro_screen/src/presenter/controllers/introduce_controller.dart';
 import 'package:intro_screen/src/presenter/ui/components/constant.dart';
 import 'package:intro_screen/src/presenter/ui/organisms/page_body.dart';
@@ -15,26 +16,30 @@ class IntroducePage extends StatefulWidget {
 }
 
 class _IntroducePageState extends State<IntroducePage> {
-  final IntroduceController ct = di();
+  final IntroduceController ct = GetIt.instance();
   @override
   Widget build(BuildContext context) {
     return IntroductionSlider(
       items: ct.introduces
           .map(
             (e) => IntroductionSliderItem(
-              logo: PageTitle(logoPage: e.logo),
+              logo: PageTitle(logoPage: e.logo.link),
               title: PageBody(
                 titlePage: e.title,
                 paragraphPage: e.paragrafos,
               ),
-              backgroundImageDecoration: const BackgroundImageDecoration(
-                image: AssetImage(
-                  "imagens/background.png",
+              backgroundImageDecoration: BackgroundImageDecoration(
+                image: NetworkImage(
+                  IntroduceAssets.backgroud.link,
                 ),
               ),
             ),
           )
           .toList(),
+      skip: IconButton(
+        onPressed: () => null,
+        icon: Icon(Icons.close),
+      ),
       done: const Done(
         child: Icon(
           Icons.done,
