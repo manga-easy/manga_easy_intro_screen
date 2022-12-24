@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_slider/introduction_slider.dart';
-import 'package:manga_easy_intro_screen/src/introduce_module.dart';
-import 'package:manga_easy_intro_screen/src/presenter/controllers/introduce_controller.dart';
-import 'package:manga_easy_intro_screen/src/presenter/ui/components/constant.dart';
-import 'package:manga_easy_intro_screen/src/presenter/ui/organisms/page_body.dart';
-import 'package:manga_easy_intro_screen/src/presenter/ui/organisms/page_title.dart';
+import 'package:intro_screen/src/introduce_module.dart';
+import 'package:intro_screen/src/presenter/controllers/introduce_controller.dart';
+import 'package:intro_screen/src/presenter/ui/components/constant.dart';
+import 'package:intro_screen/src/presenter/ui/organisms/page_body.dart';
+import 'package:intro_screen/src/presenter/ui/organisms/page_title.dart';
 
 class IntroducePage extends StatefulWidget {
+  static const route = '/introduce';
   const IntroducePage({super.key});
 
   @override
