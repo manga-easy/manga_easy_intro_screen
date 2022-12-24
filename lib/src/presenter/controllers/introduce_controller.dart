@@ -1,4 +1,4 @@
-import 'package:manga_easy_intro_screen/src/domain/models/introduce_model.dart';
+import 'package:intro_screen/src/domain/models/introduce_model.dart';
 
 class IntroduceController {
   final introduces = [
