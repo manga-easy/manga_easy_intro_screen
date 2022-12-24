@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intro_screen/src/domain/assets_enum.dart';
 
 class PageTitle extends StatelessWidget {
   final String logoPage;
@@ -9,7 +10,7 @@ class PageTitle extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Column(
       children: [
-        Image.asset(
+        Image.network(
           logoPage,
           height: size.height * 0.20,
         ),
@@ -18,15 +19,15 @@ class PageTitle extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              child: Image.asset(
-                'imagens/logo_manga_easy.png',
+              child: Image.network(
+                IntroduceAssets.logoMangaEasy.link,
                 height: size.height * 0.09,
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30, right: 12),
-              child: Image.asset(
-                'imagens/tres_pontinho_barrinha.png',
+              child: Image.network(
+                IntroduceAssets.tresPontinhoBarrinha.link,
                 height: size.height * 0.045,
               ),
             ),

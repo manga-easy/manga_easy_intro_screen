@@ -1,6 +1,8 @@
+import 'package:intro_screen/src/domain/assets_enum.dart';
+
 class IntroduceModel {
   final String title;
-  final String logo;
+  final IntroduceAssets logo;
   final List<String> paragrafos;
 
   IntroduceModel({
