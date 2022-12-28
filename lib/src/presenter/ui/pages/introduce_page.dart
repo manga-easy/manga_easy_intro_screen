@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:intro_screen/extenal_route.dart';
 import 'package:intro_screen/src/domain/assets_enum.dart';
-import 'package:intro_screen/src/presenter/ui/pages/preferences_page.dart';
 import 'package:introduction_slider/introduction_slider.dart';
 import 'package:intro_screen/src/presenter/controllers/introduce_controller.dart';
 import 'package:intro_screen/src/presenter/ui/organisms/page_body.dart';
@@ -40,7 +40,7 @@ class _IntroducePageState extends State<IntroducePage> {
       skip: IconButton(
         onPressed: () => Navigator.pushNamed(
           context,
-          '',
+          ExternalRoute.preference,
         ),
         icon: Icon(
           Icons.close,
@@ -52,7 +52,11 @@ class _IntroducePageState extends State<IntroducePage> {
           Icons.done,
           color: ThemeService.of.backgroundText,
         ),
-        home: const PreferencePage(),
+        home: null,
+        onPressed: () => Navigator.pushNamed(
+          context,
+          ExternalRoute.preference,
+        ),
       ),
       next: Next(
         child: Icon(
