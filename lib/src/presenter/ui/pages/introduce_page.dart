@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:intro_screen/src/domain/assets_enum.dart';
+import 'package:intro_screen/src/presenter/ui/pages/preferences_page.dart';
 import 'package:introduction_slider/introduction_slider.dart';
 import 'package:intro_screen/src/presenter/controllers/introduce_controller.dart';
-import 'package:intro_screen/src/presenter/ui/components/constant.dart';
 import 'package:intro_screen/src/presenter/ui/organisms/page_body.dart';
 import 'package:intro_screen/src/presenter/ui/organisms/page_title.dart';
+import 'package:manga_easy_themes/manga_easy_themes.dart';
 
 class IntroducePage extends StatefulWidget {
   static const route = '/introduce';
@@ -37,24 +38,36 @@ class _IntroducePageState extends State<IntroducePage> {
           )
           .toList(),
       skip: IconButton(
-        onPressed: () => null,
-        icon: Icon(Icons.close),
+        onPressed: () => Navigator.pushNamed(
+          context,
+          '',
+        ),
+        icon: Icon(
+          Icons.close,
+          color: ThemeService.of.backgroundText,
+        ),
       ),
-      done: const Done(
+      done: Done(
         child: Icon(
           Icons.done,
-          color: kPrimaryColor,
+          color: ThemeService.of.backgroundText,
         ),
-        home: Text('done'),
+        home: const PreferencePage(),
       ),
-      next: const Next(
-        child: Icon(Icons.arrow_forward, color: kPrimaryColor),
+      next: Next(
+        child: Icon(
+          Icons.arrow_forward,
+          color: ThemeService.of.backgroundText,
+        ),
       ),
-      back: const Back(
-        child: Icon(Icons.arrow_back, color: kPrimaryColor),
+      back: Back(
+        child: Icon(
+          Icons.arrow_back,
+          color: ThemeService.of.backgroundText,
+        ),
       ),
-      dotIndicator: const DotIndicator(
-        selectedColor: kPrimaryColor,
+      dotIndicator: DotIndicator(
+        selectedColor: ThemeService.of.backgroundText,
       ),
     );
   }

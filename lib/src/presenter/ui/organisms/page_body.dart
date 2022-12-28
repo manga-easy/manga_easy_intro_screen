@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/constant.dart';
+import 'package:manga_easy_themes/manga_easy_themes.dart';
 
 class PageBody extends StatelessWidget {
   final String titlePage;
@@ -15,7 +15,7 @@ class PageBody extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-        color: kBackGroundColorSecond,
+        color: ThemeService.of.backgroundColor,
         borderRadius: BorderRadius.circular(20),
       ),
       padding: const EdgeInsets.only(right: 16, left: 10, top: 16, bottom: 16),
@@ -29,19 +29,19 @@ class PageBody extends StatelessWidget {
                 child: Text(
                   titlePage,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        color: kTextTitleColor,
+                        color: ThemeService.of.backgroundText,
                         fontWeight: FontWeight.w600,
                       ),
                 ),
               ),
             ],
           ),
-          const Divider(
+          Divider(
             height: 1,
             indent: 25,
             endIndent: 25,
             thickness: 1,
-            color: kBackgroundColor,
+            color: ThemeService.of.backgroundText,
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(5, 18, 5, 10),
@@ -54,10 +54,10 @@ class PageBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.star,
                           size: 20,
-                          color: kTextTitleColor,
+                          color: ThemeService.of.backgroundText,
                         ),
                         const SizedBox(width: 5),
                         Expanded(
@@ -68,7 +68,7 @@ class PageBody extends StatelessWidget {
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
-                                    color: kTextTitleColor,
+                                    color: ThemeService.of.backgroundText,
                                     fontWeight: FontWeight.w600),
                           ),
                         ),
