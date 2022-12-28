@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_screen/src/domain/assets_enum.dart';
+import 'package:manga_easy_themes/manga_easy_themes.dart';
 
 class PageTitle extends StatelessWidget {
   final String logoPage;
@@ -13,6 +14,7 @@ class PageTitle extends StatelessWidget {
         Image.network(
           logoPage,
           height: size.height * 0.20,
+          color: ThemeService.of.backgroundText,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -22,6 +24,7 @@ class PageTitle extends StatelessWidget {
               child: Image.network(
                 IntroduceAssets.logoMangaEasy.link,
                 height: size.height * 0.09,
+                color: ThemeService.of.backgroundText,
               ),
             ),
             Padding(
@@ -29,6 +32,7 @@ class PageTitle extends StatelessWidget {
               child: Image.network(
                 IntroduceAssets.tresPontinhoBarrinha.link,
                 height: size.height * 0.045,
+                color: ThemeService.of.backgroundText,
               ),
             ),
           ],
