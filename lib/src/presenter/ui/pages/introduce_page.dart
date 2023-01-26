@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:intro_screen/extenal_route.dart';
 import 'package:intro_screen/src/domain/assets_enum.dart';
 import 'package:introduction_slider/introduction_slider.dart';
 import 'package:intro_screen/src/presenter/controllers/introduce_controller.dart';
 import 'package:intro_screen/src/presenter/ui/organisms/page_body.dart';
 import 'package:intro_screen/src/presenter/ui/organisms/page_title.dart';
+import 'package:manga_easy_routes/manga_easy_routes.dart';
 import 'package:manga_easy_themes/manga_easy_themes.dart';
 
 class IntroducePage extends StatefulWidget {
-  static const route = '/introduce';
   const IntroducePage({super.key});
 
   @override
@@ -38,9 +37,9 @@ class _IntroducePageState extends State<IntroducePage> {
           )
           .toList(),
       skip: IconButton(
-        onPressed: () => Navigator.pushNamed(
-          context,
-          ExternalRoute.preference,
+        onPressed: () => EasyNavi.of(context).pushNamed(
+          route: EasyRoutes.preferences,
+          arguments: PreferencesArguments(),
         ),
         icon: Icon(
           Icons.close,
@@ -53,9 +52,9 @@ class _IntroducePageState extends State<IntroducePage> {
           color: ThemeService.of.backgroundText,
         ),
         home: null,
-        onPressed: () => Navigator.pushNamed(
-          context,
-          ExternalRoute.preference,
+        onPressed: () => EasyNavi.of(context).pushNamed(
+          route: EasyRoutes.preferences,
+          arguments: PreferencesArguments(),
         ),
       ),
       next: Next(
