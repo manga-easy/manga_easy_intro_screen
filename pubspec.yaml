@@ -1,6 +1,6 @@
 name: intro_screen
 description: Micro app de introção do Manga Easy.
-version: 0.0.1
+version: 1.0.0
 homepage:
 publish_to: none
 environment:
@@ -15,9 +15,14 @@ dependencies:
       url: https://github.com/lucascardo12/introduction_slider.git
   manga_easy_themes:
     git: 
-      url: https://github.com/lucascardo12/manga_easy_themes.git
-      ref: 1.0.0
+      url: https://github.com/manga-easy/manga_easy_themes.git
+      ref: 1.0.2
   get_it: ^7.2.0
+  manga_easy_routes:
+    git:
+      url: https://github.com/manga-easy/manga_easy_routes.git
+      ref: v0.0.3
+  
 
 dev_dependencies:
   flutter_test:
