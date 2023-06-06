@@ -37,9 +37,9 @@ class _IntroducePageState extends State<IntroducePage> {
           )
           .toList(),
       skip: IconButton(
-        onPressed: () => EasyNavi.of(context).pushNamed(
+        onPressed: () => EasyNavigator.of(context).pushNamed(
           route: EasyRoutes.preferences,
-          arguments: PreferencesArguments(),
+          arguments: {},
         ),
         icon: Icon(
           Icons.close,
@@ -52,9 +52,9 @@ class _IntroducePageState extends State<IntroducePage> {
           color: ThemeService.of.backgroundText,
         ),
         home: null,
-        onPressed: () => EasyNavi.of(context).pushNamed(
+        onPressed: () => EasyNavigator.of(context).pushNamed(
           route: EasyRoutes.preferences,
-          arguments: PreferencesArguments(),
+          arguments: {},
         ),
       ),
       next: Next(
